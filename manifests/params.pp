@@ -2,14 +2,19 @@
 #
 class fail2ban::params {
   $package_name = $facts['os']['family'] ? {
+    'FreeBSD' => 'py27-fail2ban',
     default => 'fail2ban',
   }
 
   $package_list = $facts['os']['family'] ? {
+    'FreeBSD' => [
+        'py27-gamin',
+    ],
     default => undef,
   }
 
   $config_dir_path = $facts['os']['family'] ? {
+    'FreeBSD' => '/usr/local/etc/fail2ban',
     default => '/etc/fail2ban',
   }
 
@@ -26,6 +31,7 @@ class fail2ban::params {
   }
 
   $config_file_group = $facts['os']['family'] ? {
+    'FreeBSD' => 'wheel',
     default => 'root',
   }
 
@@ -53,6 +59,8 @@ class fail2ban::params {
 
   case $facts['os']['family'] {
     'Debian': {
+    }
+    'FreeBSD': {
     }
     'RedHat': {
     }

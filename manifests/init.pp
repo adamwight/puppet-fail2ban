@@ -32,7 +32,7 @@ class fail2ban (
 
   String[1] $action = 'action_mb',
   Integer[0] $bantime = 432000,
-  String[1] $email = "fail2ban@${::domain}",
+  String[1] $email = "fail2ban@${::hostname}",
   String[1] $sender = "fail2ban@${::fqdn}",
   String[1] $iptables_chain = 'INPUT',
   Array[String[1]] $jails = ['ssh', 'ssh-ddos'],

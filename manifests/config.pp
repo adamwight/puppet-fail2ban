@@ -55,6 +55,8 @@ class fail2ban::config {
     'Suse':{
       # No defaults to deal with
     }
+    'FreeBSD': {
+    }
     default: {
       fail("${facts['os']['family']} not supported.")
     }

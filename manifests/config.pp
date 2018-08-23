@@ -49,6 +49,8 @@ class fail2ban::config {
         require => $fail2ban::config_file_require,
       }
     }
+    'FreeBSD': {
+    }
     default: {
       fail("${facts['os']['family']} not supported.")
     }

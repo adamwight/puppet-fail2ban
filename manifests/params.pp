@@ -19,11 +19,11 @@ class fail2ban::params {
   }
 
   $config_dir_filter_path = $facts['os']['family'] ? {
-    default => '/etc/fail2ban/filter.d',
+    default => "${config_dir_path}/filter.d",
   }
 
   $config_file_path = $facts['os']['family'] ? {
-    default => '/etc/fail2ban/jail.conf',
+    default => "${config_dir_path}/jail.conf",
   }
 
   $config_file_owner = $facts['os']['family'] ? {

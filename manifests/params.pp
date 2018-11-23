@@ -23,7 +23,7 @@ class fail2ban::params {
   }
 
   $config_file_path = $facts['os']['family'] ? {
-    default => "${config_dir_path}/jail.conf",
+    default => "${config_dir_path}/jail.local",
   }
 
   $config_file_owner = $facts['os']['family'] ? {

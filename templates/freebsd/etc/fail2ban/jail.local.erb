@@ -50,6 +50,7 @@ banaction = pf
 
 enabled = <%= scope.lookupvar('::fail2ban::jails').include? "sshd" %>
 mode = ddos
+bantime = -1
 # FIXME:
 #mode.... = <%= scope.lookupvar('::fail2ban::jails').include? "ssh-ddos" %>
 
@@ -75,6 +76,7 @@ enabled  = <%= scope.lookupvar('::fail2ban::jails').include? "postfix" %>
 [postfix-sasl]
 
 enabled  = <%= scope.lookupvar('::fail2ban::jails').include? "postfix-sasl" %>
+bantime = -1
 
 
 # dovecot defaults to logging to the mail syslog facility

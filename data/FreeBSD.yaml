@@ -7,5 +7,5 @@ fail2ban::config_file_group: wheel
 fail2ban::config_file_path: "%{hiera('fail2ban::config_dir_path')}/jail.local"
 fail2ban::config_file_template: fail2ban/freebsd/etc/fail2ban/jail.local.erb
 fail2ban::package_list:
-    - py37-gamin
+    - gamin
 fail2ban::package_name: py37-fail2ban

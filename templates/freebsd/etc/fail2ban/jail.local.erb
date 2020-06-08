@@ -28,7 +28,7 @@ destemail = <%= scope.lookupvar('::fail2ban::email') %>
 # iptables-multiport, shorewall, etc) It is used to define
 # action_* variables. Can be overriden globally or per
 # section within jail.local file
-banaction = pf
+banaction = pf[actiontype=<allports>]
 
 #
 # JAILS
